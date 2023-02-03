@@ -1,0 +1,146 @@
+.signin-container {
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: slidecontainer forwards 500ms;
+}
+
+.login-box {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.3);
+  padding: 2rem 4rem;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: 390ms ease;
+}
+
+.login-box:hover {
+  transform: skew(2deg);
+}
+
+.chat-title {
+  margin-top: 2.5rem;
+}
+
+.chat-title h1 {
+  color: #392f5a;
+  text-align: center;
+}
+
+.login-title {
+  margin-top: 1rem;
+}
+
+.login-title p {
+  text-align: center;
+  color: #7871aa;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.input-container {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.input-container input {
+  width: 350px;
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.login-btn__fill {
+  width: 350px;
+}
+
+.login-btn__fill button {
+  width: 100%;
+  padding: 0.65rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #7871aa;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 250ms ease-in;
+}
+
+.login-btn__fill button:hover {
+  background-color: #392f5a;
+  scale: 1.1;
+}
+
+.registration-container p {
+  text-align: center;
+  margin-top: 1rem;
+  color: #7871aa;
+}
+
+.registration-container p span {
+  color: #392f5a;
+}
+
+.file-upload-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.file-upload-container img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+input[type="file"] {
+  color: rgba(0, 0, 0, 0);
+}
+
+.avatar-file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.avatar-file::before {
+  content: "Pick Your Avatar";
+  display: inline-block;
+  background: #392f5a;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10pt;
+  color: white;
+  outline: none;
+}
+.avatar-file:hover::before {
+  border-color: black;
+}
+.avatar-file:active::before {
+  background: linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+/* ------------ANIMATION------------------ */
+
+@keyframes slidecontainer {
+  from {
+    transform: translateX(1500px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

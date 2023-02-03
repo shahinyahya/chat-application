@@ -1,10 +1,16 @@
-import "./App.css";
+import "./app.css";
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Registration from "./pages/Registeration";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Chat App Project</h1>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Registration />} />
+      </Routes>
+    </>
   );
 }
 
