@@ -102,18 +102,21 @@
 .home-container__right {
   width: 65%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
   background-color: #fff;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 
-.home-container__right p {
+.activation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
   color: rgba(0, 0, 0, 0.2);
 }
+
+/* .home-container__right p {
+} */
 
 @keyframes blinkchat {
   from {
