@@ -1,10 +1,12 @@
 import "../signin/signin.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Signup = () => {
   const [data, setData] = useState({});
   const [avatar, setAvatar] = useState({});
+
+  const navigate = useNavigate();
 
   function handleClick(e) {
     let inputChange = { [e.target.name]: e.target.value };
@@ -63,13 +65,13 @@ const Signup = () => {
           </div>
 
           <div className="login-btn__fill">
-            <button>Sign Up</button>
+            <button onClick={() => navigate("/login")}>Sign Up</button>
           </div>
         </form>
         <div className="registration-container">
           <p>
-            You do have an account?{" "}
-            <Link to="/" className="link">
+            You do have an account?
+            <Link to="/login" className="link">
               Login
             </Link>
           </p>

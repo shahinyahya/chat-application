@@ -1,9 +1,11 @@
 import "./signin.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Signin = () => {
   const [data, setData] = useState({});
+
+  const navigate = useNavigate();
 
   function handleClick(e) {
     let inputChange = { [e.target.name]: e.target.value };
@@ -41,7 +43,7 @@ const Signin = () => {
           </div>
 
           <div className="login-btn__fill">
-            <button>Sign In</button>
+            <button onClick={() => navigate("/")}>Sign In</button>
           </div>
         </form>
         <div className="registration-container">

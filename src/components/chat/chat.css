@@ -1,0 +1,66 @@
+.chat-area-container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 37.2rem;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  display: none;
+}
+
+::-webkit-scrollbar:hover {
+  display: block;
+}
+
+::-webkit-scrollbar-track {
+  height: 100%;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-track-piece {
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+/* 
+.users-container {
+  padding: 0.65rem 0;
+} */
+
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  height: 100%;
+  padding: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  transition: 250ms ease-in;
+}
+
+.user-box:hover {
+  background-color: #2b3555;
+}
+
+.user-profile__left img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-username {
+  font-size: 18px;
+}
