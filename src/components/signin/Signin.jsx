@@ -1,9 +1,13 @@
 import "./signin.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase-backend/config";
+import { ErrorContext } from "../../context/ErrorContext";
 
 const Signin = () => {
   const [data, setData] = useState({});
+  const { err, setErr } = useContext(ErrorContext);
 
   const navigate = useNavigate();
 
@@ -11,6 +15,18 @@ const Signin = () => {
     let inputChange = { [e.target.name]: e.target.value };
     setData({ ...data, ...inputChange });
   }
+
+  const handleSignin = async (e) => {
+    e.preventDefault();
+
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password).then(
+        () => navigate("/")
+      );
+    } catch (err) {
+      setErr(true);
+    }
+  };
 
   return (
     <div className="signin-container">
@@ -23,12 +39,12 @@ const Signin = () => {
           <p>Login</p>
         </div>
 
-        <form className="login-form">
+        <form className="login-form" onSubmit={handleSignin}>
           <div className="input-container">
             <input
-              placeholder="Username.."
-              type="name"
-              name="username"
+              placeholder="Your Email.."
+              type="email"
+              name="email"
               onChange={handleClick}
             />
           </div>
@@ -43,9 +59,10 @@ const Signin = () => {
           </div>
 
           <div className="login-btn__fill">
-            <button onClick={() => navigate("/")}>Sign In</button>
+            <button>Sign In</button>
           </div>
         </form>
+        {err && <span>Invalid email/password</span>}
         <div className="registration-container">
           <p>
             You don't have an account?

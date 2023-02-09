@@ -96,7 +96,8 @@ const Message = () => {
               </div>
 
               <div className="message-content-right">
-                <p>Hello There kunjapu</p>
+                {/* <p>Hello There kunjapu</p> */}
+                <img src={Photo} alt="" height="300" width="200" />
               </div>
             </div>
           </div>

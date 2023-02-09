@@ -1,16 +1,16 @@
 .chat-area-container {
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  transition: 250ms all;
   max-height: 37.2rem;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-  display: none;
+.chat-area-container:hover {
+  overflow-y: scroll;
 }
 
-::-webkit-scrollbar:hover {
-  display: block;
+::-webkit-scrollbar {
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
