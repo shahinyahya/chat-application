@@ -1,15 +1,21 @@
 import "./app.css";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route /*useNavigate*/ } from "react-router-dom";
 import Login from "./pages/Login";
 import Registration from "./pages/Registeration";
 import ChatBox from "./pages/ChatBox";
 import { ErrorContext } from "./context/ErrorContext";
-import { useState, useEffect, useContext } from "react";
+import { useState /*useEffect, useContext*/ } from "react";
 
 function App() {
   // const navigate = useNavigate();
 
-  // useEffect(() => navigate("/login"), [navigate]);
+  // useEffect(() => {
+  //   navigate("/login");
+
+  //   return () => {
+  //     navigate("/");
+  //   };
+  // }, []);
 
   const [err, setErr] = useState(false);
   return (
