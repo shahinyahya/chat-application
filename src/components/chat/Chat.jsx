@@ -20,12 +20,14 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase-backend/config";
 import { ErrorContext } from "../../context/ErrorContext";
+import { ChatContext } from "../../context/ChatContext";
 
 const Chat = () => {
   const navigate = useNavigate();
 
   const { currentUser } = useContext(AuthContext);
   const { err, setErr } = useContext(ErrorContext);
+  const { dispatch } = useContext(ChatContext);
 
   // console.log(currentUser);
 
@@ -115,7 +117,11 @@ const Chat = () => {
     currentUser.uid && getChats();
   }, [currentUser.uid]);
 
-  console.log(Object.entries(chats));
+  // console.log(Object.entries(chats));
+
+  const handleSelect = (user) => {
+    dispatch({ type: "CHANGE_USER", payload: user });
+  };
 
   return (
     <>
@@ -163,7 +169,11 @@ const Chat = () => {
         {user && (
           <div className="users-container" onClick={handleChatSelection}>
             {Object.entries(chats)?.map((chat) => (
-              <div className="user-box" key={chat[0]}>
+              <div
+                className="user-box"
+                key={chat[0]}
+                onClick={() => handleSelect(chat[1].userInfo)}
+              >
                 <div className="user-profile__left">
                   <img
                     src={chat[1].userInfo.photoURL}
