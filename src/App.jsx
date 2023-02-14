@@ -22,8 +22,8 @@ function App() {
     <>
       <ErrorContext.Provider value={{ err, setErr }}>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<ChatBox />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/chat" element={<ChatBox />} />
           <Route path="/register" element={<Registration />} />
         </Routes>
       </ErrorContext.Provider>
